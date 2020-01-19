@@ -99,6 +99,8 @@ public class TennisGame2 implements TennisGame
         }
         return score;
     }
+
+    private String
     
     public void SetP1Score(int number){
         

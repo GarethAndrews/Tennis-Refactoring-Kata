@@ -1,21 +1,19 @@
+import java.util.ArrayList;
 
 public class TennisGame1 implements TennisGame {
-    
-    private int m_score1 = 0;
-    private int m_score2 = 0;
-    private String player1Name;
-    private String player2Name;
+    private ArrayList<Player> players;
 
     public TennisGame1(String player1Name, String player2Name) {
-        this.player1Name = player1Name;
-        this.player2Name = player2Name;
+        players = new ArrayList<>();
+        players.add(new Player(player1Name, 0));
+        players.add(new Player(player2Name, 0));
     }
 
     public void wonPoint(String playerName) {
-        if (playerName == "player1")
-            m_score1 += 1;
+        if (playerName.equals("player1"))
+            players.get(0).increaseScore();
         else
-            m_score2 += 1;
+            players.get(1).increaseScore();
     }
 
     public String getScore() {
